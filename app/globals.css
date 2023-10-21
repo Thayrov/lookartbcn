@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --color-button-pink: #ff4ca6;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,10 +19,62 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
     rgb(var(--background-start-rgb));
+  font-family: var(--font-inter), var(--font-roboto), sans-serif;
+}
+.animated-button {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.animated-button span {
+  position: absolute;
+  background: var(--color-button-pink);
+  transition: all 0.3s ease-in-out;
+}
+
+.animated-button .top {
+  left: 0;
+  right: 100%;
+  height: 3px;
+  top: 0;
+}
+
+.animated-button .right {
+  top: 0;
+  bottom: 100%;
+  width: 3px;
+  right: 0;
+}
+
+.animated-button .bottom {
+  left: 100%;
+  right: 0;
+  height: 3px;
+  bottom: 0;
+}
+
+.animated-button .left {
+  top: 100%;
+  bottom: 0;
+  width: 3px;
+  left: 0;
+}
+
+.animated-button:hover .top {
+  right: 0;
+}
+
+.animated-button:hover .right {
+  bottom: 0;
+}
+
+.animated-button:hover .bottom {
+  left: 0;
+}
+
+.animated-button:hover .left {
+  top: 0;
 }
