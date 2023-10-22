@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         primary: '#2B2B2B',
-        secondary: '#ff00d6',
+        secondary: '#E800DC',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -18,7 +18,7 @@ const config: Config = {
       },
       fontFamily: {
         inter: ['var(--font-inter)'],
-        roboto: ['var(--font-roboto)'],
+        mulish: ['var(--font-mulish)'],
         stencil: ['var(--font-stencil)'],
       },
     },
