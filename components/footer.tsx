@@ -9,7 +9,7 @@ export default function Footer() {
       <div className='container mx-auto py-8 px-[10rem] flex flex-col md:flex-row justify-between items-center'>
         <div className='mb-4 md:mb-0'>
           <Link href='/'>
-            <Image src='/logo.jpg' width={150} height={150} alt='Look Art Logo' />
+            <Image src='/logo.png' width={150} height={150} alt='Look Art Logo' />
           </Link>
         </div>
 
