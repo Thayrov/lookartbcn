@@ -18,7 +18,7 @@ const config: Config = withMT({
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       fontFamily: {
-        inter: ['var(--font-inter)'],
+        raleway: ['var(--font-raleway)'],
         mulish: ['var(--font-mulish)'],
         stencil: ['var(--font-stencil)'],
       },

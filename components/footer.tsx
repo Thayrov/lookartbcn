@@ -6,7 +6,7 @@ import { BiLogoInstagramAlt, BiLogoWhatsappSquare } from 'react-icons/bi';
 export default function Footer() {
   return (
     <footer className='bg-primary text-white pt-4 font-mulish'>
-      <div className='container mx-auto py-8 px-[10rem] flex flex-col md:flex-row justify-between items-center'>
+      <div className='ps-8 py-8 md:px-[10rem] flex flex-col lg:flex-row justify-between sm:flex-initial lg:items-center gap-6'>
         <div className='mb-4 md:mb-0'>
           <Link href='/'>
             <Image src='/logo.png' width={150} height={150} alt='Look Art Logo' />
@@ -46,7 +46,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className='space-x-4'>
+        <div className='space-x-0'>
           <h3 className='text-lg mb-2 font-semibold'>Más enlances</h3>
           <a href='/Legal' className='block cursor-pointer underline hover:text-gray-400 text-sm'>
             Aviso Legal
