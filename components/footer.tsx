@@ -47,7 +47,7 @@ export default function Footer() {
         </div>
 
         <div className='space-x-0'>
-          <h3 className='text-lg mb-2 font-semibold'>Más enlances</h3>
+          <h3 className='text-lg mb-2 font-semibold'>Más enlaces</h3>
           <a href='/Legal' className='block cursor-pointer underline hover:text-gray-400 text-sm'>
             Aviso Legal
           </a>
