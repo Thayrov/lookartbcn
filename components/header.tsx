@@ -3,8 +3,62 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Navbar, IconButton, Collapse, Button } from '../lib/importComponents';
+import { BsChevronDown } from 'react-icons/bs';
+import {
+  Navbar,
+  IconButton,
+  Collapse,
+  Button,
+  MenuItem,
+  Typography,
+  Menu,
+  MenuHandler,
+  MenuList,
+} from '../lib/importComponents';
 import { links } from '@/lib/data';
+
+const navListMenuItems = [
+  { title: 'Belleza manos' },
+  { title: 'Belleza pies' },
+  { title: 'Diseño de mirada' },
+  { title: 'Masajes corporales' },
+  { title: 'Gua Sha Facial' },
+  { title: 'Joyería dental' },
+];
+
+function NavListMenu({ page }: { page: string }): React.ReactElement {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const renderItems = navListMenuItems.map(({ title }) => (
+    <a href='#' key={title}>
+      <MenuItem>
+        <Typography>{title}</Typography>
+      </MenuItem>
+    </a>
+  ));
+
+  return (
+    <React.Fragment>
+      <Menu allowHover open={isMenuOpen} handler={setIsMenuOpen}>
+        <MenuHandler>
+          <Link href='/Tratamientos'>
+            <MenuItem className='hidden items-center gap-2 lg:flex hover:bg-transparent hover:text-white active:bg-transparent active:text-white focus:bg-transparent focus:text-white p-0 font-raleway'>
+              {page}{' '}
+              <BsChevronDown
+                strokeWidth={2}
+                className={`transition-transform ${isMenuOpen ? 'rotate-180' : ''}`}
+              />
+            </MenuItem>
+          </Link>
+        </MenuHandler>
+        <MenuList className='hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid'>
+          <ul className='col-span-4 flex w-full flex-col gap-1'>{renderItems}</ul>
+        </MenuList>
+      </Menu>
+      <MenuItem className='flex items-center gap-2 lg:hidden'>{page}</MenuItem>
+      <ul className='ml-6 flex w-full flex-col gap-1 lg:hidden'>{renderItems}</ul>
+    </React.Fragment>
+  );
+}
 
 export default function Header() {
   const [openNav, setOpenNav] = React.useState(false);
@@ -16,27 +70,29 @@ export default function Header() {
 
   const navList = (
     <ul className='mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6'>
-      {links.map((link) => (
-        <Link
-          key={link.hash}
-          href={`/${link.path}`}
-          className={`flex items-center relative text-white 
+      {links.map((link) => {
+        return (
+          <Link
+            key={link.hash}
+            href={`/${link.path}`}
+            className={`flex items-center relative text-white 
           ${!openNav ? 'animated-button' : ''} 
           ${!openNav && pathname === `/${link.path}` ? 'border-2 border-secondary' : ''}`}>
-          <Button
-            className={`rounded-none font-inter font-normal text-md text-white capitalize ${
-              openNav ? 'text-left' : ''
-            }`}
-            fullWidth={openNav}
-            variant='text'>
-            {link.name}
-          </Button>
-          <span className='top'></span>
-          <span className='right'></span>
-          <span className='bottom'></span>
-          <span className='left'></span>
-        </Link>
-      ))}
+            <Button
+              className={`rounded-none font-raleway font-normal text-md text-white capitalize ${
+                openNav ? 'text-left' : ''
+              }`}
+              fullWidth={openNav}
+              variant='text'>
+              {link.name === 'Tratamientos' ? <NavListMenu page={'Tratamientos'} /> : link.name}
+            </Button>
+            <span className='top'></span>
+            <span className='right'></span>
+            <span className='bottom'></span>
+            <span className='left'></span>
+          </Link>
+        );
+      })}
     </ul>
   );
 

@@ -1,12 +1,20 @@
 import Link from 'next/link';
 import { Button } from '../lib/importComponents';
 
-export const CustomButton = ({ text, href }: { text: string; href: string }) => {
+export const CustomButton = ({
+  text,
+  href,
+  className,
+}: {
+  text: string;
+  href: string;
+  className?: string;
+}) => {
   return (
-    <Link href={href} className='items-center relative animated-button text-center'>
+    <Link href={href} className={`items-center relative text-center`}>
       <Button
-        className='rounded-none font-inter font-normal text-md capitalize text-white'
-        variant='gradient'>
+        className={`${className} rounded-sm font-mulish text-md text-white bg-secondary font-bold tracking-wide`}
+        variant='filled'>
         {text}
       </Button>
       <span className='top'></span>
