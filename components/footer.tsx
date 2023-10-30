@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { BiLogoInstagramAlt, BiLogoWhatsappSquare } from 'react-icons/bi';
+import { BiLogoInstagram, BiLogoWhatsapp } from '../lib/react-icons-imports';
 
 export default function Footer() {
   return (
-    <footer className='bg-primary text-white pt-4 font-mulish'>
+    <footer className='bg-primary text-white pt-4 font-mulish border-t-white border-t-[1px]'>
       <div className='ps-8 py-8 md:px-[10rem] flex flex-col lg:flex-row justify-between sm:flex-initial lg:items-center gap-6'>
         <div className='mb-4 md:mb-0'>
           <Link href='/'>
@@ -41,11 +41,14 @@ export default function Footer() {
             </a>
           </p>
           <div className='flex items-center mb-4 md:mb-0 space-x-4'>
-            <BiLogoInstagramAlt className='text-2xl cursor-pointer' />
-            <BiLogoWhatsappSquare className='text-2xl cursor-pointer' />
+            <div className='bg-white rounded-full mt-2 p-[3px]'>
+              <BiLogoInstagram className='text-primary text-2xl cursor-pointer' />
+            </div>
+            <div className='bg-white rounded-full mt-2 p-[3px]'>
+              <BiLogoWhatsapp className='text-primary text-2xl cursor-pointer' />
+            </div>
           </div>
         </div>
-
         <div className='space-x-0'>
           <h3 className='text-lg mb-2 font-semibold'>Más enlaces</h3>
           <a href='/Legal' className='block cursor-pointer underline hover:text-gray-400 text-sm'>

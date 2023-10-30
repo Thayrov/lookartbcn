@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { BsChevronDown } from 'react-icons/bs';
+import { BiChevronDown } from '../lib/react-icons-imports';
 import {
   Navbar,
   IconButton,
@@ -14,7 +14,7 @@ import {
   Menu,
   MenuHandler,
   MenuList,
-} from '../lib/importComponents';
+} from '../lib/material-tailwind-components';
 import { links } from '@/lib/data';
 
 const navListMenuItems = [
@@ -45,7 +45,7 @@ function NavListMenu({ page }: { page: string }): React.ReactElement {
           <Link href='/Tratamientos'>
             <MenuItem className='hidden items-center gap-2 bg-transparent lg:flex hover:bg-transparent hover:text-white active:bg-transparent active:text-white focus:bg-transparent focus:text-white p-0 font-raleway'>
               {page}{' '}
-              <BsChevronDown
+              <BiChevronDown
                 strokeWidth={2}
                 className={`transition-transform ${isMenuOpen ? 'rotate-180' : ''}`}
               />
@@ -60,7 +60,7 @@ function NavListMenu({ page }: { page: string }): React.ReactElement {
         className='text-white hover:text-white active:text-white focus:text-white flex items-center gap-2 lg:hidden px-0 font-raleway bg-transparent hover:bg-transparent active:bg-transparent focus:bg-transparent'
         onClick={toggleOpen}>
         {page}{' '}
-        <BsChevronDown
+        <BiChevronDown
           strokeWidth={2}
           className={`transition-transform ${isMenuOpen ? 'rotate-180' : ''}`}
         />

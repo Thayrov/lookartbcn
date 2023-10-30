@@ -1,3 +1,16 @@
-import type { ButtonProps } from '@material-tailwind/react';
+import { ReactNode } from 'react';
 
-export type variant = 'filled' | 'outlined' | 'gradient' | 'text';
+export type DataInfo = {
+  icon: string;
+  content: JSX.Element | string;
+};
+
+export type CustomCarouselProps = {
+  children: CarouselItem[];
+};
+
+export type CarouselItem = {
+  comment: string;
+  name: string;
+  link: string;
+};

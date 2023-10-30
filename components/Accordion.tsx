@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Accordion, AccordionHeader, AccordionBody } from '../lib/importComponents';
+import { Accordion, AccordionHeader, AccordionBody } from '../lib/material-tailwind-components';
 
 function Icon({ id, open }: { id: number; open: number }) {
   return (

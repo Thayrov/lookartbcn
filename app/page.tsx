@@ -1,9 +1,42 @@
 import { CustomAccordion } from '@/components/Accordion';
 import { CustomButton } from '@/components/Button';
+import { InfoCard } from '@/components/InfoCard';
 import { accordionData, treatments } from '@/lib/data';
 import Image from 'next/image';
+import { BiLinkExternal } from '../lib/react-icons-imports';
 
 export default function Home() {
+  const dataInfoCard = [
+    {
+      icon: 'BiSolidPhoneCall',
+      content: (
+        <>
+          <a href='tel:645044485' className='cursor-pointer underline hover:text-gray-400'>
+            645 044 485
+          </a>
+          <span> | </span>
+          <a href='tel:931059346' className='cursor-pointer underline hover:text-gray-400'>
+            931 059 346
+          </a>
+        </>
+      ),
+    },
+    {
+      icon: 'BiSolidMap',
+      content: 'C/ de Ramon Turró, 69 Esquina, 08005 Barcelona, España',
+    },
+    {
+      icon: 'BiSolidEnvelope',
+      content: (
+        <a
+          href='mailto:lookartbcn@gmail.com'
+          className='cursor-pointer underline hover:text-gray-400'>
+          lookartbcn@gmail.com
+        </a>
+      ),
+    },
+  ];
+
   const tratamientos = (
     <>
       {treatments.map((treatment) => (
@@ -27,7 +60,7 @@ export default function Home() {
   );
   return (
     <main className='flex flex-col items-center'>
-      <section className='relative w-full h-[70vh] bg-cover bg-center'>
+      <section className='relative block w-full h-[70vh] bg-cover bg-center'>
         <Image
           className='z-[-1] object-cover bg-center brightness-95'
           src='/hero.jpeg'
@@ -48,9 +81,10 @@ export default function Home() {
         <h1 className='text-4xl '>Centro de Belleza, Salud y Fotografía</h1>
         <CustomButton
           text={'Pedir cita'}
-          href={'/Reservaciones'}
-          className='text-xl bg-secondary'
-        />
+          href={'https://lookartbcn.booksy.com'}
+          className='text-xl bg-secondary'>
+          <BiLinkExternal />
+        </CustomButton>
       </section>
       <section className='bg-black w-full grid lg:grid-cols-3 md:grid-cols-1 gap-12 p-12 py-24 border-none'>
         {tratamientos}
@@ -82,6 +116,11 @@ export default function Home() {
           height={400}
           className='w-full lg:w-1/2'
         />
+      </section>
+      <section
+        className='w-full sm:h-[90rem] lg:h-[30rem] bg-fixed brightness-90 bg-cover bg-center flex flex-col lg:flex-row py-14 justify-center items-center gap-10 px-0 lg:px-24 xl:px-48'
+        style={{ backgroundImage: 'url(/support-2.jpeg)' }}>
+        <InfoCard data={dataInfoCard} />
       </section>
     </main>
   );

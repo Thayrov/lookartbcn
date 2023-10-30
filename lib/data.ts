@@ -83,3 +83,18 @@ export const accordionData = [
     Nuestro principal enfoque además de la salud es el arte; nos apasiona la idea de un espacio multifuncional que se combina de manera integral con un enfoque holístico, donde el arte, la estética y la fotografía se entrelazan para ofrecerte una experiencia incomparable. Esta influencia artística trajo también dentro de Lookart nuestro primer plató fotográfico para capturar momentos especiales y reflejar la belleza que emana de las personas.`,
   },
 ];
+
+export const dataInfoCard = [
+  {
+    icon: 'BiSolidPhoneCall',
+    content: '645 044 485 | 931 059 346',
+  },
+  {
+    icon: 'BiSolidMap',
+    content: 'C/ de Ramon Turró, 69 Esquina, 08005 Barcelona, España',
+  },
+  {
+    icon: 'BiSolidEnvelope',
+    content: 'lookartbcn@gmail.com',
+  },
+];
