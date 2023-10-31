@@ -20,16 +20,16 @@ export const links = [
     hash: '#tratamientos',
   },
   {
-    name: 'Reserva tu cita',
-    path: 'Reservaciones',
-    hash: '#reservaciones',
+    name: 'Contacto',
+    path: 'Contacto',
+    hash: '#contacto',
   },
 ] as const;
 
 export const treatments = [
   {
     name: 'manicura',
-    image: '/tratamientos-1.jpeg',
+    image: '/support-3.jpeg',
   },
   {
     name: 'pedicura',
@@ -98,3 +98,64 @@ export const dataInfoCard = [
     content: 'lookartbcn@gmail.com',
   },
 ];
+
+export const platoImages1 = [
+  {
+    image: '/plato-1.jpeg',
+    description:
+      'Mujer en cuclillas con una sonrisa, vistiendo ropa oscura y sobre un fondo blanco.',
+  },
+  {
+    image: '/plato-2.jpeg',
+    description:
+      'Mujer saltando con una pose dinámica, vistiendo un top rojo y pantalones verdes, con la suela de su zapato visible hacia la cámara.',
+  },
+  {
+    image: '/plato-3.jpeg',
+    description:
+      'Mujer con cabello rizado oscuro, vistiendo una blusa con un diseño que parece una nube roja, sobre fondo blanco.',
+  },
+  {
+    image: '/plato-4.jpeg',
+    description:
+      'Hombre posando con una mano extendida hacia la cámara, vistiendo una camisa con un patrón repetido y gafas de sol, sobre fondo blanco.',
+  },
+  {
+    image: '/plato-5.jpeg',
+    description:
+      'Mujer parada, vistiendo una camiseta sin mangas blanca y jeans azules rasgados, mostrando un pequeño tatuaje en su brazo, sobre fondo blanco.',
+  },
+  {
+    image: '/plato-6.jpeg',
+    description:
+      'Mujer en una pose dinámica, inclinada hacia el suelo, vistiendo una blusa sin mangas y pantalones rosados, sobre fondo blanco.',
+  },
+  {
+    image: '/plato-7.jpeg',
+    description:
+      'Primer plano del rostro de una mujer con maquillaje brillante y trenzas en el cabello, sobre fondo blanco.',
+  },
+  {
+    image: '/plato-8.jpeg',
+    description:
+      'Mujer con cabello rizado oscuro, riendo con la boca abierta, vistiendo una blusa con un diseño similar al de la tercera imagen, sobre fondo blanco.',
+  },
+] as const;
+
+export const platoImages2 = [
+  {
+    image: '/plato-9.jpeg',
+    description:
+      'Se muestra un estudio fotográfico espacioso y bien iluminado. Hay un fondo blanco montado en una pared y varios tipos de iluminación distribuidos por el lugar, incluyendo una caja de luz rectangular y un reflector con paraguas. El suelo está cubierto con láminas de madera clara y hay una cortina oscura a la izquierda. En la esquina superior derecha, hay un letrero luminoso que dice "ON STAGE".',
+  },
+  {
+    image: '/plato-10.jpeg',
+    description:
+      'En este encuadre, se enfoca una parte más específica del estudio. Hay una mesa cubierta con un paño gris, sobre la que reposa un espejo con luces LED circulares (conocido como espejo de anillo o ring light). Al lado, hay otro reflector con paraguas y al fondo, las luces del letrero "ON STAGE" se ven ligeramente. La ambientación es más tenue y cálida en esta imagen en comparación con la primera.',
+  },
+  {
+    image: '/plato-11.jpeg',
+    description:
+      'La tercera imagen presenta otra perspectiva del estudio. Se destaca una pared con fondo blanco, y hay una caja de luz y un espejo de anillo en primer plano. La iluminación, proveniente del espejo, es brillante y domina la escena. A la derecha, hay un mostrador con algunos objetos y un espejo rectangular. El suelo mantiene el mismo patrón de madera clara.',
+  },
+] as const;

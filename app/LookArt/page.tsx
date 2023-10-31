@@ -71,6 +71,7 @@ export default function LookArt() {
           <CustomButton
             text={'Pedir una cita'}
             href={'https://lookartbcn.booksy.com'}
+            target={'_blank'}
             className='text-xl bg-secondary'>
             <BiLinkExternal />
           </CustomButton>
@@ -90,7 +91,8 @@ export default function LookArt() {
           <CustomButton
             text={'Reserva ahora'}
             href={'https://lookartbcn.booksy.com'}
-            className='text-xl bg-secondary'>
+            target={'_blank'}
+            className='text-xl bg-secondary whitespace-nowrap'>
             <BiLinkExternal />
           </CustomButton>
         </article>

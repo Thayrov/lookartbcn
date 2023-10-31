@@ -22,6 +22,12 @@ const config: Config = withMT({
         mulish: ['var(--font-mulish)'],
         stencil: ['var(--font-stencil)'],
       },
+      gridTemplateColumns: {
+        'auto-fit-5': 'repeat(auto-fit, minmax(5rem, 1fr))',
+        'auto-fit-10': 'repeat(auto-fit, minmax(10rem, 1fr))',
+        'auto-fit-20': 'repeat(auto-fit, minmax(20rem, 1fr))',
+        'auto-fit-25': 'repeat(auto-fit, minmax(25rem, 1fr))',
+      },
     },
   },
   plugins: [],

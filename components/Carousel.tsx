@@ -23,13 +23,17 @@ export const CustomCarousel: FC<CustomCarouselProps> = ({ children }) => {
       {children.map((c, index) => (
         <div
           key={index}
-          className='w-auto h-auto flex flex-col gap-4 justify-center align-middle  font-mulish p-24'>
+          className='w-auto h-[40rem] lg:h-[30rem] flex flex-col gap-4 justify-center align-middle font-mulish p-16 md:p-24'>
           <p>
             <span className='font-bold text-xl'>"</span>
             {c.comment}
             <span className='font-bold text-xl'>"</span>
           </p>
-          <a href={c.link} className='underline hover:text-gray-400'>
+          <a
+            href={c.link}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='underline hover:text-gray-400'>
             Continuar leyendo
           </a>
           <h3 className='font-bold self-end pe-8'>{c.name}</h3>

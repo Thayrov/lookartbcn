@@ -3,6 +3,7 @@ import './globals.css';
 
 import Footer from '@/components/Footer';
 import { raleway, mulish, stencil } from '@/lib/fonts';
+import { Toaster } from 'react-hot-toast';
 
 export const metadata = {
   title: 'Lookartbcn',
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         {children}
         <Footer />
+        <Toaster position='bottom-right' />
       </body>
     </html>
   );

@@ -6,6 +6,7 @@ import {
   BiSolidEnvelope,
   BiSolidMap,
   BiLinkExternal,
+  BiPaperPlane,
 } from 'react-icons/bi';
 
 export {
@@ -16,4 +17,5 @@ export {
   BiSolidEnvelope,
   BiSolidMap,
   BiLinkExternal,
+  BiPaperPlane,
 };

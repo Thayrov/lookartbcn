@@ -5,17 +5,23 @@ export const CustomButton = ({
   text,
   href,
   className,
+  target,
   children,
 }: {
   text: string;
   href: string;
   className?: string;
+  target?: string;
   children?: React.ReactNode;
 }) => {
   return (
-    <Link href={href} className={`items-center relative text-center`}>
+    <Link
+      href={href}
+      target={target}
+      rel='noopener noreferrer'
+      className={`items-center relative text-center`}>
       <Button
-        className={`${className} rounded-sm font-mulish text-md text-white bg-secondary font-bold tracking-wide`}
+        className={`${className} rounded-md font-mulish text-md text-white bg-secondary font-bold tracking-wide`}
         variant='filled'>
         <span className='flex items-center gap-2'>
           {text} {children}

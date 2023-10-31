@@ -41,12 +41,20 @@ export default function Footer() {
             </a>
           </p>
           <div className='flex items-center mb-4 md:mb-0 space-x-4'>
-            <div className='bg-white rounded-full mt-2 p-[3px]'>
+            <a
+              className='bg-white rounded-full mt-2 p-[3px]'
+              href='https://www.instagram.com/lookartbcn/'
+              target='_blank'
+              rel='noreferrer'>
               <BiLogoInstagram className='text-primary text-2xl cursor-pointer' />
-            </div>
-            <div className='bg-white rounded-full mt-2 p-[3px]'>
+            </a>
+            <a
+              className='bg-white rounded-full mt-2 p-[3px]'
+              href='https://wa.me/34645044485'
+              target='_blank'
+              rel='noreferrer'>
               <BiLogoWhatsapp className='text-primary text-2xl cursor-pointer' />
-            </div>
+            </a>
           </div>
         </div>
         <div className='space-x-0'>
