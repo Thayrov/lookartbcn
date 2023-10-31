@@ -2,9 +2,9 @@ import { CustomButton } from '@/components/Button';
 import Image from 'next/image';
 import { BiLinkExternal, BiLogoInstagram } from '../../lib/react-icons-imports';
 import { platoImages1, platoImages2 } from '@/lib/data';
-import { sendEmail } from '@/actions/sendEmail';
+/* import { sendEmail } from '@/actions/sendEmail';
 import toast from 'react-hot-toast';
-import SubmitBtn from '@/components/Submit';
+import SubmitBtn from '@/components/Submit'; */
 
 export default function Plato() {
   return (

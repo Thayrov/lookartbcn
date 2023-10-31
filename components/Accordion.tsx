@@ -30,7 +30,10 @@ export function CustomAccordion({
   return (
     <>
       {data.map((d) => (
-        <Accordion open={open === d.position} icon={<Icon id={d.position} open={open} />}>
+        <Accordion
+          key={d.position}
+          open={open === d.position}
+          icon={<Icon id={d.position} open={open} />}>
           <AccordionHeader
             onClick={() => handleOpen({ value: d.position })}
             className='text-white text-2xl font-mulish font-bold hover:text-white px-4 border-b-[1px] border-gray-700'>
