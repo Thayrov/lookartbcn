@@ -1,6 +1,5 @@
-'use client';
 import { BiPaperPlane } from '../lib/react-icons-imports';
-import { useFormStatus } from 'react-dom';
+import { experimental_useFormStatus as useFormStatus } from 'react-dom';
 
 export default function SubmitBtn() {
   const { pending } = useFormStatus();
