@@ -16,6 +16,7 @@ import {
   CardBody,
   CardHeader,
   Carousel,
+  Input,
 } from '@material-tailwind/react';
 export {
   Navbar,
@@ -34,4 +35,5 @@ export {
   CardBody,
   CardHeader,
   Carousel,
+  Input,
 };

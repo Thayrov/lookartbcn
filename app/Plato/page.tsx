@@ -83,10 +83,10 @@ export default function Plato() {
       <section className='text-center text-4xl lg:text-5xl w-full h-auto bg-black text-white flex flex-col items-center justify-center border-t-[1px] border-b-[1px] gap-8 font-semibold py-16 font-mulish tracking-wide'>
         <h2>Conoce nuestro estudio</h2>
         <CustomButton
-          text={''}
+          text={'Síguenos en Instagram'}
           href={'https://www.instagram.com/lookartbcnstudio'}
           target={'_blank'}
-          className='text-sm bg-secondary rounded-full'>
+          className='text-sm bg-secondary rounded-full normal-case'>
           <BiLogoInstagram />
         </CustomButton>
       </section>
@@ -104,7 +104,13 @@ export default function Plato() {
           </article>
         ))}
       </section>
-      <section className='flex w-full h-[45rem] overflow-hidden'>
+      <section className='flex w-full h-[45rem] overflow-hidden relative'>
+        <div className='absolute ps-72 pt-20 w-1/2 flex flex-col align-center'>
+          <p className='text-lg'>
+            Los campos marcados con <span className='text-red-500'>*</span> son obligatorios
+          </p>
+          <Form />
+        </div>
         <video
           src='/plato-12.mov'
           autoPlay
@@ -115,10 +121,6 @@ export default function Plato() {
             objectFit: 'cover',
             objectPosition: 'center +30%',
           }}></video>
-        <p>
-          Los campos marcados con <span className='text-red-500'>*</span> son obligatorios
-        </p>
-        <Form />
       </section>
     </main>
   );
