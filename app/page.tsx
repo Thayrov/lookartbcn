@@ -69,11 +69,7 @@ export default function Home() {
           fill={true}
         />
         <div className='p-0 m-0 absolute right-1/4 bottom-1/4 h-auto text-white font-bold text-3xl'>
-          <CustomButton
-            text={'Ver tratamientos'}
-            href={'/Tratamientos'}
-            className='underline capitalize'
-          />
+          <CustomButton text={'Ver tratamientos'} href={'/Tratamientos'} className='capitalize' />
         </div>
       </section>
       <section className='text-center w-full h-auto bg-primary text-white text-xl flex flex-col items-center justify-center border-t-[1px] border-b-[1px] gap-8 font-semibold py-16 font-mulish tracking-wide'>
