@@ -105,7 +105,7 @@ export default function Plato() {
         ))}
       </section>
       <section className='flex w-full h-[45rem] overflow-hidden relative'>
-        <div className='absolute ps-72 pt-20 w-1/2 flex flex-col align-center'>
+        <div className='absolute flex flex-col align-center px-4 pt-16 w-full lg:ps-72 lg:pt-20 lg:w-8/12'>
           <p className='text-lg'>
             Los campos marcados con <span className='text-red-500'>*</span> son obligatorios
           </p>
