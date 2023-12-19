@@ -37,4 +37,5 @@ next-env.d.ts
 # VSCode
 .vscode
 
+# extra notes
 extras
