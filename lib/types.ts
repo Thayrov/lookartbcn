@@ -14,3 +14,15 @@ export type CarouselItem = {
   name: string;
   link: string;
 };
+
+export type ImageType = {
+  src: string;
+  content: string;
+  title?: string;
+};
+
+export type ImageWrapperProps = {
+  image: ImageType;
+  showIndex: boolean;
+  index?: string;
+};
