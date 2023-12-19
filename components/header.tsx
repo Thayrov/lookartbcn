@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { BiChevronDown } from '../lib/react-icons-imports';
+import { BiChevronDown, BiLinkExternal } from '../lib/react-icons-imports';
 import {
   Navbar,
   IconButton,
@@ -16,6 +16,7 @@ import {
   MenuList,
 } from '../lib/material-tailwind-components';
 import { links } from '@/lib/data';
+import { CustomButton } from './Button';
 
 const navListMenuItems = [
   { title: 'Belleza manos' },
@@ -145,6 +146,12 @@ export default function Header() {
                 </svg>
               )}
             </IconButton>
+            <CustomButton
+              text={'Pedir cita'}
+              href={'https://lookartbcn.booksy.com'}
+              className='text-xl bg-secondary'>
+              <BiLinkExternal />
+            </CustomButton>
           </div>
         </div>
         <Collapse open={openNav}>{navList}</Collapse>
