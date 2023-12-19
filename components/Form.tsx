@@ -7,7 +7,7 @@ import { Input, Textarea } from '../lib/material-tailwind-components';
 export const Form = () => {
   return (
     <form
-      className='mt-10 flex flex-col dark:text-black gap-10 z-20'
+      className='mt-10 flex flex-col dark:text-black gap-10 z-[1]'
       action={async (formData) => {
         const { data, error } = await sendEmail(formData);
 

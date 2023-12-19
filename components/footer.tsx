@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { BiLogoInstagram, BiLogoWhatsapp } from '../lib/react-icons-imports';
+import { BiLinkExternal, BiLogoInstagram, BiLogoWhatsapp } from '../lib/react-icons-imports';
+import { CustomButton } from './Button';
 
 export default function Footer() {
   return (
@@ -67,6 +68,14 @@ export default function Footer() {
             className='block cursor-pointer underline hover:text-gray-400 text-sm'>
             Política de privacidad
           </a>
+        </div>
+        <div className='space-x-0'>
+          <CustomButton
+            text={'Pedir cita'}
+            href={'https://lookartbcn.booksy.com'}
+            className='text-xl bg-secondary '>
+            <BiLinkExternal />
+          </CustomButton>
         </div>
       </div>
 
