@@ -1,10 +1,27 @@
+'use client';
 import { CustomButton } from '@/components/Button';
 import Image from 'next/image';
 import { BiLinkExternal, BiLogoInstagram } from '../../lib/react-icons-imports';
 import { platoImages1, platoImages2 } from '@/lib/data';
 import { Form } from '@/components/Form';
+import { ImageModalViewer } from '@/components/ImageModalViewer';
+import { useState } from 'react';
+import { ImageType } from '@/lib/types';
 
 export default function Plato() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [activeImageSet, setActiveImageSet] = useState<ImageType[]>([]);
+
+  const handleOpenModal = (imageSet: ImageType[], index: number) => {
+    setActiveImageSet(imageSet);
+    setActiveImageIndex(index);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
   return (
     <main className='flex flex-col items-center'>
       <section className='flex w-full h-[45rem] overflow-hidden'>
@@ -67,14 +84,16 @@ export default function Plato() {
         </div>
       </section>
       <section className='bg-white w-full h-auto py-4 gap-4 grid grid-cols-2 lg:grid-cols-4 '>
-        {platoImages1.map((img) => (
+        {platoImages1.map((img, index) => (
           <article
-            key={img.image}
-            className='relative w-full aspect-square overflow-hidden cursor-zoom-in'>
+            key={img.src}
+            className='relative w-full aspect-square overflow-hidden cursor-zoom-in'
+            onClick={() => handleOpenModal(platoImages1, index)}>
             <Image
-              src={img.image}
-              alt={img.description}
+              src={img.src}
+              alt={img.content}
               fill={true}
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
               className='transition-all duration-500 object-cover object-center hover:brightness-75 hover:scale-110'
             />
           </article>
@@ -91,14 +110,16 @@ export default function Plato() {
         </CustomButton>
       </section>
       <section className='bg-white w-full h-auto py-4 gap-4 grid grid-cols-3'>
-        {platoImages2.map((img) => (
+        {platoImages2.map((img, index) => (
           <article
-            key={img.image}
-            className='relative w-full aspect-square overflow-hidden cursor-zoom-in'>
+            key={img.src}
+            className='relative w-full aspect-square overflow-hidden cursor-zoom-in'
+            onClick={() => handleOpenModal(platoImages2, index)}>
             <Image
-              src={img.image}
-              alt={img.description}
+              src={img.src}
+              alt={img.content}
               fill={true}
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
               className='transition-all duration-500 object-cover object-center hover:brightness-75 hover:scale-110'
             />
           </article>
@@ -122,6 +143,15 @@ export default function Plato() {
             objectPosition: 'center +30%',
           }}></video>
       </section>
+      {modalOpen && (
+        <ImageModalViewer
+          images={activeImageSet}
+          showIndex={true}
+          showPreview={true}
+          activeIndex={activeImageIndex}
+          onClose={handleCloseModal}
+        />
+      )}
     </main>
   );
 }

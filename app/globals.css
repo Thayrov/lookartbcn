@@ -24,6 +24,10 @@ body {
   font-family: var(--font-raleway), var(--font-mulish), sans-serif;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .animated-button {
   position: relative;
   cursor: pointer;
