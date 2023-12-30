@@ -17,8 +17,9 @@ import {
 } from '../lib/material-tailwind-components';
 import { links } from '@/lib/data';
 import { CustomButton } from './Button';
+import { SectionTitle } from '@/lib/types';
 
-const navListMenuItems = [
+const navListMenuItems: { title: SectionTitle }[] = [
   { title: 'Belleza manos' },
   { title: 'Belleza pies' },
   { title: 'Diseño de mirada' },
@@ -27,23 +28,39 @@ const navListMenuItems = [
   { title: 'Joyería dental' },
 ];
 
+const sectionMap = {
+  'Belleza manos': '#belleza-manos',
+  'Belleza pies': '#belleza-pies',
+  'Diseño de mirada': '#mirada',
+  'Masajes corporales': '#masajes',
+  'Gua Sha Facial': '#gua-sha',
+  'Joyería dental': '#dental',
+};
+
 function NavListMenu({ page }: { page: string }): React.ReactElement {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const toggleOpen = () => setIsMenuOpen((cur) => !cur);
 
-  const renderItems = navListMenuItems.map(({ title }) => (
-    <Link href='#' key={title}>
-      <MenuItem className='text-white rounded-none hover:bg-white hover:text-secondary active:bg-white active:text-secondary focus:bg-white focus:text-secondary'>
-        <Typography className='px-0 font-raleway font-medium'>{title}</Typography>
-      </MenuItem>
-    </Link>
-  ));
+  const renderItems = navListMenuItems.map(({ title }) => {
+    const sectionId = sectionMap[title];
+    if (typeof sectionId === 'undefined') {
+      return null;
+    }
+
+    return (
+      <Link href={`/tratamientos${sectionId}`} key={title}>
+        <MenuItem className='text-white rounded-none hover:bg-white hover:text-secondary active:bg-white active:text-secondary focus:bg-white focus:text-secondary'>
+          <Typography className='px-0 font-raleway font-medium'>{title}</Typography>
+        </MenuItem>
+      </Link>
+    );
+  });
 
   return (
     <>
       <Menu allowHover open={isMenuOpen} handler={toggleOpen}>
         <MenuHandler>
-          <Link href='/Tratamientos'>
+          <Link href='/tratamientos'>
             <MenuItem className='hidden items-center gap-2 bg-transparent lg:flex hover:bg-transparent hover:text-white active:bg-transparent active:text-white focus:bg-transparent focus:text-white p-0 font-raleway'>
               {page}{' '}
               <BiChevronDown

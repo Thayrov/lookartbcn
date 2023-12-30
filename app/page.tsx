@@ -5,38 +5,38 @@ import { accordionData, treatments } from '@/lib/data';
 import Image from 'next/image';
 import { BiLinkExternal } from '../lib/react-icons-imports';
 
-export default function Home() {
-  const dataInfoCard = [
-    {
-      icon: 'BiSolidPhoneCall',
-      content: (
-        <>
-          <a href='tel:645044485' className='cursor-pointer underline hover:text-gray-400'>
-            645 044 485
-          </a>
-          <span> | </span>
-          <a href='tel:931059346' className='cursor-pointer underline hover:text-gray-400'>
-            931 059 346
-          </a>
-        </>
-      ),
-    },
-    {
-      icon: 'BiSolidMap',
-      content: 'C/ de Ramon Turró, 69 Esquina, 08005 Barcelona, España',
-    },
-    {
-      icon: 'BiSolidEnvelope',
-      content: (
-        <a
-          href='mailto:lookartbcn@gmail.com'
-          className='cursor-pointer underline hover:text-gray-400'>
-          lookartbcn@gmail.com
+export const dataInfoCard = [
+  {
+    icon: 'BiSolidPhoneCall',
+    content: (
+      <>
+        <a href='tel:645044485' className='cursor-pointer underline hover:text-gray-400'>
+          645 044 485
         </a>
-      ),
-    },
-  ];
+        <span> | </span>
+        <a href='tel:931059346' className='cursor-pointer underline hover:text-gray-400'>
+          931 059 346
+        </a>
+      </>
+    ),
+  },
+  {
+    icon: 'BiSolidMap',
+    content: 'C/ de Ramon Turró, 69 Esquina, 08005 Barcelona, España',
+  },
+  {
+    icon: 'BiSolidEnvelope',
+    content: (
+      <a
+        href='mailto:lookartbcn@gmail.com'
+        className='cursor-pointer underline hover:text-gray-400'>
+        lookartbcn@gmail.com
+      </a>
+    ),
+  },
+];
 
+export default function Home() {
   const tratamientos = (
     <>
       {treatments.map((treatment) => (
