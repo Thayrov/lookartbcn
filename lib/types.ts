@@ -26,3 +26,11 @@ export type ImageWrapperProps = {
   showIndex: boolean;
   index?: string;
 };
+
+export type SectionTitle =
+  | 'Belleza manos'
+  | 'Belleza pies'
+  | 'Diseño de mirada'
+  | 'Masajes corporales'
+  | 'Gua Sha Facial'
+  | 'Joyería dental';

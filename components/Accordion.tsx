@@ -20,8 +20,12 @@ function Icon({ id, open }: { id: number; open: number }) {
 
 export function CustomAccordion({
   data,
+  headerStyles,
+  bodyStyles,
 }: {
   data: { position: number; title: string; content: string }[];
+  headerStyles?: string;
+  bodyStyles?: string;
 }) {
   const [open, setOpen] = React.useState(0);
 
@@ -36,10 +40,11 @@ export function CustomAccordion({
           icon={<Icon id={d.position} open={open} />}>
           <AccordionHeader
             onClick={() => handleOpen({ value: d.position })}
-            className='text-white text-2xl font-mulish font-bold hover:text-white px-4 border-b-[1px] border-gray-700'>
+            className={`text-white text-2xl font-mulish font-bold hover:text-white px-4 border-b-[1px] border-gray-700 ${headerStyles}`}>
             {d.title}
           </AccordionHeader>
-          <AccordionBody className='text-white text-lg font-mulish font-semibold px-4 whitespace-pre-line'>
+          <AccordionBody
+            className={`text-white text-lg font-mulish font-semibold px-4 whitespace-pre-line ${bodyStyles}`}>
             {d.content}
           </AccordionBody>
         </Accordion>

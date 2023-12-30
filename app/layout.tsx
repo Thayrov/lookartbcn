@@ -6,7 +6,7 @@ import { raleway, mulish, stencil } from '@/lib/fonts';
 import { Toaster } from 'react-hot-toast';
 
 export const metadata = {
-  title: 'Lookartbcn',
+  title: 'LookArtBCN',
   description:
     'Centro de salud, belleza y fotografía, creado por Camila y Malena, jóvenes artistas y productoras de Buenos Aires, Argentina.',
 };
