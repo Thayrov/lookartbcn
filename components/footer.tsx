@@ -1,27 +1,27 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { BiLinkExternal, BiLogoInstagram, BiLogoWhatsapp } from '../lib/react-icons-imports';
-import { CustomButton } from './Button';
+import { BiLogoInstagram, BiLogoWhatsapp } from '../lib/react-icons-imports';
+import BookButton from './BookButton';
 
 export default function Footer() {
   return (
     <footer className='bg-primary text-white pt-4 font-mulish border-t-white border-t-[1px]'>
-      <div className='ps-8 py-8 md:px-[10rem] flex flex-col lg:flex-row justify-between sm:flex-initial lg:items-center gap-6'>
+      <div className='max-w-6xl mx-auto ps-8 py-8 md:px-[10rem] lg:px-4 flex flex-col lg:flex-row justify-between sm:flex-initial lg:items-start gap-6'>
         <div className='mb-4 md:mb-0'>
           <Link href='/'>
             <Image src='/logo.png' width={150} height={150} alt='Look Art Logo' />
           </Link>
         </div>
 
-        <div className='mb-4 md:mb-0'>
+        <div className='mb-4 md:mb-0 lg:mt-7'>
           <h3 className='text-lg mb-2 font-semibold'>Dirección</h3>
           <p className='text-sm'>Lookart BCN S.L</p>
           <p className='text-sm'>C/ de Ramon Turró, 69 Esquina,</p>
           <p className='text-sm'>08005 Barcelona, España</p>
         </div>
 
-        <div className='mb-4 md:mb-0'>
+        <div className='mb-4 md:mb-0 lg:mt-7'>
           <h3 className='text-lg mb-2 font-semibold'>Contacto</h3>
           <p className='text-sm'>
             Teléfono:{' '}
@@ -58,24 +58,19 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className='space-x-0'>
+        <div className='space-x-0 lg:mt-7'>
           <h3 className='text-lg mb-2 font-semibold'>Más enlaces</h3>
-          <a href='/Legal' className='block cursor-pointer underline hover:text-gray-400 text-sm'>
+          <a href='/legal' className='block cursor-pointer underline hover:text-gray-400 text-sm'>
             Aviso Legal
           </a>
           <a
-            href='/Privacidad'
+            href='/privacidad'
             className='block cursor-pointer underline hover:text-gray-400 text-sm'>
             Política de privacidad
           </a>
         </div>
-        <div className='space-x-0'>
-          <CustomButton
-            text={'Pedir cita'}
-            href={'https://lookartbcn.booksy.com'}
-            className='text-xl bg-secondary '>
-            <BiLinkExternal />
-          </CustomButton>
+        <div className='space-x-0 lg:mt-7'>
+          <BookButton />
         </div>
       </div>
 

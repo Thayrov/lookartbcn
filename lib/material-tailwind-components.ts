@@ -6,9 +6,6 @@ import {
   Button,
   MenuItem,
   Typography,
-  Menu,
-  MenuHandler,
-  MenuList,
   Accordion,
   AccordionHeader,
   AccordionBody,
@@ -18,6 +15,7 @@ import {
   Carousel,
   Input,
   Textarea,
+  ButtonGroup,
 } from '@material-tailwind/react';
 export {
   Navbar,
@@ -26,9 +24,6 @@ export {
   Button,
   MenuItem,
   Typography,
-  Menu,
-  MenuHandler,
-  MenuList,
   Accordion,
   AccordionHeader,
   AccordionBody,
@@ -38,4 +33,5 @@ export {
   Carousel,
   Input,
   Textarea,
+  ButtonGroup,
 };

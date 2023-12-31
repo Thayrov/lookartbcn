@@ -1,8 +1,8 @@
 'use client';
 import { CustomButton } from '@/components/Button';
 import Image from 'next/image';
-import { BiLinkExternal } from '../../lib/react-icons-imports';
 import { CustomCarousel } from '@/components/Carousel';
+import BookButton from '@/components/BookButton';
 
 export default function LookArt() {
   const comments = [
@@ -68,13 +68,7 @@ export default function LookArt() {
             los más innovadores y vanguardistas, un barrio que impulsa a lo artístico e inspira al
             constante crecimiento de nuestra marca.
           </p>
-          <CustomButton
-            text={'Pedir una cita'}
-            href={'https://lookartbcn.booksy.com'}
-            target={'_blank'}
-            className='text-xl bg-secondary'>
-            <BiLinkExternal />
-          </CustomButton>
+          <BookButton />
         </div>
       </section>
       <section className='bg-black w-full py-28 px-4 lg:px-24 xl:px-48 2xl:px-60 border-none flex flex-col gap-10 justify-between items-center align-middle'>
@@ -88,13 +82,7 @@ export default function LookArt() {
         style={{ backgroundImage: 'url(/support-4.jpeg)', backgroundPosition: 'center -0.01%' }}>
         <article className='bg-primary text-white ps-6 pe-48 py-8 bg-opacity-50 flex flex-col items-start gap-5 '>
           <h2 className='font-mulish text-2xl font-semibold'>Buscas un diseño de joyería dental</h2>
-          <CustomButton
-            text={'Reserva ahora'}
-            href={'https://lookartbcn.booksy.com'}
-            target={'_blank'}
-            className='text-xl bg-secondary whitespace-nowrap'>
-            <BiLinkExternal />
-          </CustomButton>
+          <BookButton />
         </article>
       </section>
     </main>

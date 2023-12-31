@@ -3,7 +3,7 @@ import { CustomButton } from '@/components/Button';
 import { InfoCard } from '@/components/InfoCard';
 import { accordionData, treatments } from '@/lib/data';
 import Image from 'next/image';
-import { BiLinkExternal } from '../lib/react-icons-imports';
+import BookButton from '@/components/BookButton';
 
 export const dataInfoCard = [
   {
@@ -37,27 +37,26 @@ export const dataInfoCard = [
 ];
 
 export default function Home() {
-  const tratamientos = (
-    <>
-      {treatments.map((treatment) => (
-        <div key={treatment.name} className='relative'>
-          <Image
-            src={treatment.image}
-            alt={treatment.name}
-            width={200}
-            height={200}
-            style={{ backgroundImage: `url(${treatment.image})` }}
-            className='z-[-1] object-cover bg-center brightness-50 w-full h-96'
-          />
-          <CustomButton
-            text={treatment.name}
-            href={treatment.name}
-            className='absolute left-[1rem] bottom-[10rem] whitespace-nowrap'
-          />
-        </div>
-      ))}
-    </>
+  const tratamientos = treatments.map(
+    (treatment: { name: string; image: string; path: string }) => (
+      <div key={treatment.name} className='relative '>
+        <Image
+          src={treatment.image}
+          alt={treatment.name}
+          width={200}
+          height={200}
+          style={{ backgroundImage: `url(${treatment.image})` }}
+          className='object-cover bg-center brightness-50 w-full h-96'
+        />
+        <CustomButton
+          text={treatment.name}
+          href={`/tratamientos${treatment.path}`}
+          className='absolute z-[1] left-[1rem] bottom-[10rem] whitespace-nowrap'
+        />
+      </div>
+    )
   );
+
   return (
     <main className='flex flex-col items-center'>
       <section className='relative block w-full h-[70vh] bg-cover bg-center'>
@@ -75,12 +74,7 @@ export default function Home() {
       <section className='text-center w-full h-auto bg-primary text-white text-xl flex flex-col items-center justify-center border-t-[1px] border-b-[1px] gap-8 font-semibold py-16 font-mulish tracking-wide'>
         <p className='text-5xl'>El Arte de la Belleza</p>
         <h1 className='text-4xl '>Centro de Belleza, Salud y Fotografía</h1>
-        <CustomButton
-          text={'Pedir cita'}
-          href={'https://lookartbcn.booksy.com'}
-          className='text-xl bg-secondary'>
-          <BiLinkExternal />
-        </CustomButton>
+        <BookButton />
       </section>
       <section className='bg-black w-full grid lg:grid-cols-3 md:grid-cols-1 gap-12 p-12 py-24 border-none'>
         {tratamientos}

@@ -1,12 +1,13 @@
 'use client';
 import { CustomButton } from '@/components/Button';
 import Image from 'next/image';
-import { BiLinkExternal, BiLogoInstagram } from '../../lib/react-icons-imports';
+import { BiLogoInstagram } from '../../lib/react-icons-imports';
 import { platoImages1, platoImages2 } from '@/lib/data';
 import { Form } from '@/components/Form';
 import { ImageModalViewer } from '@/components/ImageModalViewer';
 import { useState } from 'react';
 import { ImageType } from '@/lib/types';
+import BookButton from '@/components/BookButton';
 
 export default function Plato() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -69,17 +70,10 @@ export default function Plato() {
             <CustomButton
               text={'Más información'}
               href={'https://www.instagram.com/lookartbcnstudio'}
-              target={'_blank'}
-              className='text-xl bg-secondary'>
+              target={'_blank'}>
               <BiLogoInstagram className='text-2xl' />
             </CustomButton>
-            <CustomButton
-              text={'Reserva una cita'}
-              href={'https://lookartbcn.booksy.com'}
-              target={'_blank'}
-              className='text-xl bg-secondary'>
-              <BiLinkExternal />
-            </CustomButton>
+            <BookButton />
           </div>
         </div>
       </section>
@@ -105,7 +99,7 @@ export default function Plato() {
           text={'Síguenos en Instagram'}
           href={'https://www.instagram.com/lookartbcnstudio'}
           target={'_blank'}
-          className='text-sm bg-secondary rounded-full normal-case'>
+          className='rounded-full normal-case'>
           <BiLogoInstagram />
         </CustomButton>
       </section>

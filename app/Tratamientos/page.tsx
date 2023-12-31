@@ -1,7 +1,5 @@
 'use client';
-import { CustomButton } from '@/components/Button';
 import Image from 'next/image';
-import { BiLinkExternal } from '../../lib/react-icons-imports';
 import { CustomAccordion } from '@/components/Accordion';
 import {
   accordionDentalData,
@@ -20,16 +18,24 @@ import {
   treatmentsImages6,
 } from '@/lib/data';
 import { ImageType } from '@/lib/types';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ImageModalViewer } from '@/components/ImageModalViewer';
 import { dataInfoCard } from '../page';
 import { InfoCard } from '@/components/InfoCard';
+import BookButton from '@/components/BookButton';
+import { usePathname, useRouter } from 'next/navigation';
+import { ButtonGroup, Button } from '../../lib/material-tailwind-components';
 
 export default function Tratamientos() {
   const [modalOpen, setModalOpen] = useState(false);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [activeImageSet, setActiveImageSet] = useState<ImageType[]>([]);
-
+  const router = useRouter();
+  const pathname = usePathname();
+  const handleNavigation = (hash: string) => {
+    const path = `${pathname}${hash}`;
+    router.push(path);
+  };
   const handleOpenModal = (imageSet: ImageType[], index: number) => {
     setActiveImageSet(imageSet);
     setActiveImageIndex(index);
@@ -39,6 +45,16 @@ export default function Tratamientos() {
   const handleCloseModal = () => {
     setModalOpen(false);
   };
+
+  const navListMenuItems = [
+    { title: 'Belleza manos', hash: '#belleza-manos' },
+    { title: 'Belleza pies', hash: '#belleza-pies' },
+    { title: 'Diseño de mirada', hash: '#mirada' },
+    { title: 'Masajes corporales', hash: '#masajes' },
+    { title: 'Gua Sha Facial', hash: '#gua-sha' },
+    { title: 'Joyería dental', hash: '#dental' },
+  ];
+
   return (
     <main className='flex flex-col items-center'>
       <section
@@ -48,20 +64,27 @@ export default function Tratamientos() {
           <h2 className='font-mulish text-4xl md:leading-[3.5rem] lg:leading-[4rem] md:text-[2.75rem] lg:text-[3.125rem]  font-semibold'>
             Tu centro de belleza y arte de referencia en Barcelona
           </h2>
-          <CustomButton
-            text={'Reserva ahora'}
-            href={'https://lookartbcn.booksy.com'}
-            target={'_blank'}
-            className='text-xl bg-secondary whitespace-nowrap'>
-            <BiLinkExternal />
-          </CustomButton>
+          <BookButton />
         </article>
       </section>
-      <section className='bg-primary w-full text-center font-mulish font-bold px-6 py-16 md:py-20 md:px-9'>
+      <section className='bg-primary w-full text-center font-mulish font-bold px-6 pt-16 md:pt-20 md:px-9'>
         <h1 className='text-4xl md:text-[2.75rem] lg:text-[3.125rem] mb-4 md:mb-8'>
           Uñas de gel, laminado de cejas, masajes…
         </h1>
-        <h2 className='text-lg md:text-4xl lg:text-'>y muchos más en LookArtBCN</h2>
+        <h2 className='text-lg md:text-4xl '>y muchos más en LookArtBCN:</h2>
+      </section>
+      <section className='bg-primary w-full flex align-center justify-center py-8 md:py-12'>
+        <ButtonGroup className='max-w-5xl grid gap-1 grid-rows-2 grid-cols-3 px-6 lg:grid-rows-1 lg:grid-cols-6'>
+          {navListMenuItems.map((item) => (
+            <Button
+              key={item.title}
+              variant='filled'
+              onClick={() => handleNavigation(item.hash)}
+              className={`font-mulish text-md text-white bg-secondary font-bold tracking-wide hover:text-primary uppercase rounded-none w-full h-full z-0`}>
+              {item.title}
+            </Button>
+          ))}
+        </ButtonGroup>
       </section>
       <section
         className='relative flex w-full h-auto justify-end items-center p-6 lg:px-16'
@@ -93,13 +116,7 @@ export default function Tratamientos() {
               bodyStyles='px-2 text-base font-normal'
             />
           </div>
-          <CustomButton
-            text={'Reserva una cita'}
-            href={'https://lookartbcn.booksy.com'}
-            target={'_blank'}
-            className='text-xl bg-secondary'>
-            <BiLinkExternal />
-          </CustomButton>
+          <BookButton />
         </div>
       </section>
       <section className='bg-primary w-full font-mulish px-6 py-16 md:py-20 md:px-9'>
@@ -138,13 +155,7 @@ export default function Tratamientos() {
               bodyStyles='px-2 text-base font-normal'
             />
           </div>
-          <CustomButton
-            text={'Reserva una cita'}
-            href={'https://lookartbcn.booksy.com'}
-            target={'_blank'}
-            className='text-xl bg-secondary'>
-            <BiLinkExternal />
-          </CustomButton>
+          <BookButton />
         </div>
       </section>
       <section className='bg-primary w-full h-auto px-0 md:px-4 lg:px-8 py-8 lg:py-16 xl:py-24 2xl:py-32 gap-0 grid grid-cols-5'>
@@ -193,13 +204,7 @@ export default function Tratamientos() {
               </p>
               <p>¡Te esperamos para consentir tus pies y celebrar su importancia en tu vida!</p>
               <div className='py-4'>
-                <CustomButton
-                  text={'Reserva una cita'}
-                  href={'https://lookartbcn.booksy.com'}
-                  target={'_blank'}
-                  className='text-xl bg-secondary'>
-                  <BiLinkExternal />
-                </CustomButton>
+                <BookButton />
               </div>
             </article>
             <article className='flex flex-col gap-4 basis-1/2'>
@@ -259,13 +264,7 @@ export default function Tratamientos() {
               bodyStyles='px-2 text-base font-normal'
             />
           </div>
-          <CustomButton
-            text={'Reserva una cita'}
-            href={'https://lookartbcn.booksy.com'}
-            target={'_blank'}
-            className='text-xl bg-secondary'>
-            <BiLinkExternal />
-          </CustomButton>
+          <BookButton />
         </div>
         <video
           src='/Diseno-cejas-1.mp4'
@@ -293,13 +292,7 @@ export default function Tratamientos() {
             Depilación con hilo + laminado + lifting de pestañas con tinte : antes 75€ – ahora 65€
           </p>
           <div className='self-center pt-6'>
-            <CustomButton
-              text={'Reserva una cita'}
-              href={'https://lookartbcn.booksy.com'}
-              target={'_blank'}
-              className='text-xl bg-secondary'>
-              <BiLinkExternal />
-            </CustomButton>
+            <BookButton />
           </div>
         </div>
       </section>
@@ -426,13 +419,7 @@ export default function Tratamientos() {
               bodyStyles='px-2 text-base font-normal'
             />
           </div>
-          <CustomButton
-            text={'Reserva una cita'}
-            href={'https://lookartbcn.booksy.com'}
-            target={'_blank'}
-            className='text-xl bg-secondary'>
-            <BiLinkExternal />
-          </CustomButton>
+          <BookButton />
         </div>
       </section>
       <section className='bg-primary w-full h-auto px-0 md:px-4 lg:px-8 py-8 lg:py-16 xl:py-24 2xl:py-32 gap-0 grid grid-cols-5'>
@@ -474,13 +461,7 @@ export default function Tratamientos() {
                 manera ofrecerles un servicio cómodo y duradero.
               </p>
               <div className='mt-4'>
-                <CustomButton
-                  text={'Reserva una cita'}
-                  href={'https://lookartbcn.booksy.com'}
-                  target={'_blank'}
-                  className='text-xl bg-secondary'>
-                  <BiLinkExternal />
-                </CustomButton>
+                <BookButton />
               </div>
             </article>
             <article className='flex flex-col gap-4 basis-1/2'>

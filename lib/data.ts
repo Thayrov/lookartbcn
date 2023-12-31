@@ -32,38 +32,47 @@ export const treatments = [
   {
     name: 'manicura',
     image: '/support-3.jpeg',
+    path: '#belleza-manos',
   },
   {
     name: 'pedicura',
     image: '/tratamientos-2.jpeg',
+    path: '#belleza-pies',
   },
   {
     name: 'otros servicios',
     image: '/tratamientos-3.jpeg',
+    path: '',
   },
   {
     name: 'diseño de cejas',
     image: '/tratamientos-4.jpeg',
+    path: '#mirada',
   },
   {
     name: 'pestañas',
     image: '/tratamientos-5.jpeg',
+    path: '#mirada',
   },
   {
     name: 'depilación facial',
     image: '/tratamientos-6.jpeg',
+    path: '#mirada',
   },
   {
     name: 'masajes',
     image: '/tratamientos-7.jpeg',
+    path: '#masajes',
   },
   {
     name: 'gua sha facial',
     image: '/tratamientos-8.jpeg',
+    path: '#gua-sha',
   },
   {
     name: 'joyería dental',
     image: '/tratamientos-9.jpeg',
+    path: '#dental',
   },
 ] as const;
 
