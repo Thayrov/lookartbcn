@@ -1,7 +1,6 @@
-import Header from '@/components/Header';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import './globals.css';
-
-import Footer from '@/components/Footer';
 import { raleway, mulish, stencil } from '@/lib/fonts';
 import { Toaster } from 'react-hot-toast';
 
