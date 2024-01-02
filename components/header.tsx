@@ -5,26 +5,7 @@ import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { Navbar, IconButton, Collapse, Button } from '../lib/material-tailwind-components';
 import { links } from '@/lib/data';
-import { SectionTitle } from '@/lib/types';
 import BookButton from './BookButton';
-
-const navListMenuItems: { title: SectionTitle }[] = [
-  { title: 'Belleza manos' },
-  { title: 'Belleza pies' },
-  { title: 'Diseño de mirada' },
-  { title: 'Masajes corporales' },
-  { title: 'Gua Sha Facial' },
-  { title: 'Joyería dental' },
-];
-
-const sectionMap = {
-  'Belleza manos': '#belleza-manos',
-  'Belleza pies': '#belleza-pies',
-  'Diseño de mirada': '#mirada',
-  'Masajes corporales': '#masajes',
-  'Gua Sha Facial': '#gua-sha',
-  'Joyería dental': '#dental',
-};
 
 export default function Header() {
   const [openNav, setOpenNav] = useState(false);

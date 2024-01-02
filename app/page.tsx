@@ -5,37 +5,6 @@ import { accordionData, treatments } from '@/lib/data';
 import Image from 'next/image';
 import BookButton from '@/components/BookButton';
 
-export const dataInfoCard = [
-  {
-    icon: 'BiSolidPhoneCall',
-    content: (
-      <>
-        <a href='tel:645044485' className='cursor-pointer underline hover:text-gray-400'>
-          645 044 485
-        </a>
-        <span> | </span>
-        <a href='tel:931059346' className='cursor-pointer underline hover:text-gray-400'>
-          931 059 346
-        </a>
-      </>
-    ),
-  },
-  {
-    icon: 'BiSolidMap',
-    content: 'C/ de Ramon Turró, 69 Esquina, 08005 Barcelona, España',
-  },
-  {
-    icon: 'BiSolidEnvelope',
-    content: (
-      <a
-        href='mailto:lookartbcn@gmail.com'
-        className='cursor-pointer underline hover:text-gray-400'>
-        lookartbcn@gmail.com
-      </a>
-    ),
-  },
-];
-
 export default function Home() {
   const tratamientos = treatments.map(
     (treatment: { name: string; image: string; path: string }) => (
@@ -110,7 +79,7 @@ export default function Home() {
       <section
         className='w-full sm:h-[90rem] lg:h-[30rem] bg-fixed brightness-90 bg-cover bg-center flex flex-col lg:flex-row py-14 justify-center items-center gap-10 px-0 lg:px-24 xl:px-48'
         style={{ backgroundImage: 'url(/support-2.jpeg)' }}>
-        <InfoCard data={dataInfoCard} />
+        <InfoCard />
       </section>
     </main>
   );

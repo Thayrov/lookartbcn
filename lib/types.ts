@@ -1,10 +1,3 @@
-import { ReactNode } from 'react';
-
-export type DataInfo = {
-  icon: string;
-  content: JSX.Element | string;
-};
-
 export type CustomCarouselProps = {
   children: CarouselItem[];
 };

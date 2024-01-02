@@ -20,7 +20,6 @@ import {
 import { ImageType } from '@/lib/types';
 import { useState } from 'react';
 import { ImageModalViewer } from '@/components/ImageModalViewer';
-import { dataInfoCard } from '../page';
 import { InfoCard } from '@/components/InfoCard';
 import BookButton from '@/components/BookButton';
 import { usePathname, useRouter } from 'next/navigation';
@@ -506,7 +505,7 @@ export default function Tratamientos() {
       <section
         className='w-full sm:h-[90rem] lg:h-[30rem] bg-fixed brightness-90 bg-cover bg-center flex flex-col lg:flex-row py-14 justify-center items-center gap-10 px-0 lg:px-24 xl:px-48'
         style={{ backgroundImage: 'url(/support-2.jpeg)' }}>
-        <InfoCard data={dataInfoCard} />
+        <InfoCard />
       </section>
       {modalOpen && (
         <ImageModalViewer
